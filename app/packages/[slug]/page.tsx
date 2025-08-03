@@ -1,6 +1,6 @@
 import { allPackages } from "@/lib/data/packages";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import ImageGallery from "@/components/ImageGallery";
 
 interface Props {
   params: { slug: string };
@@ -18,49 +18,18 @@ const Page = ({ params }: Props) => {
 
   return (
     <div className="p-6 max-w-7xl mx-auto">
-      {/* Top Section */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Thumbnail images */}
-        {/* Thumbnail images */}
-        <div className="flex md:flex-col gap-4">
-          {pkg.images.map((img, i) => (
-            <div
-              key={i}
-              className="w-24 h-24 relative rounded-lg overflow-hidden border">
-              <Image
-                src={img}
-                alt={`${pkg.title} thumbnail ${i + 1}`}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
+      {/* Top Section: Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {/* Image Gallery */}
+        <ImageGallery images={pkg.images} title={pkg.title} />
 
-        {/* Main image */}
-        <div className="md:col-span-1 flex justify-center">
-          <div className="w-full h-80 relative rounded-xl overflow-hidden">
-            <Image
-              src={pkg.images[0]} // show the first image as main
-              alt={`${pkg.title} main image`}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Main image */}
-        {/* <div className="md:col-span-1 flex justify-center">
-          <div className="w-full h-80 bg-gray-300 rounded-xl" />
-        </div> */}
-
-        {/* Info */}
-        <div className="md:col-span-1 space-y-4">
-          <h1 className="text-2xl font-bold">{pkg.title}</h1>
+        {/* Info Section */}
+        <div className="space-y-4 lg:ml-36">
+          <h1 className="text-3xl font-bold">{pkg.title}</h1>
           <h2 className="text-gray-600">{pkg.subtitle}</h2>
           <p className="text-sm text-gray-500">{pkg.peopleJoined}</p>
 
-          <div className="text-xl font-semibold text-green-600">
+          <div className="text-2xl font-semibold text-green-600">
             Rs. 8,000/-
           </div>
           <div className="text-sm line-through text-gray-400">Rs. 18,000/-</div>
@@ -74,7 +43,6 @@ const Page = ({ params }: Props) => {
             commodo ligula eget dolor.
           </p>
 
-          {/* Actions */}
           <div className="flex items-center gap-2">
             <a href="tel:+919876543210">
               <button className="border px-4 py-2 rounded bg-green-600 hover:bg-green-800 text-white">

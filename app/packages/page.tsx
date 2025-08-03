@@ -76,7 +76,7 @@ const Page = () => {
     },
     {
       backgroundImage: "bg-bg-img-3",
-      title: "Nohkalikai Falls",
+      title: "Hilltop Escape",
       subtitle: "Above the Clouds",
       peopleJoined: "20+ Joined",
       slug: "hilltop-escape",
