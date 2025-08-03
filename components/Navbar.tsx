@@ -34,14 +34,16 @@ const Navbar = () => {
       </ul>
 
       {/* Desktop Button */}
-      <Link href="https://wa.me/919876543210" target="_blank">
-        <Button
-          type="button"
-          title="WhatsApp Us"
-          icon="/whatsapp.svg"
-          variant="btn_white"
-        />
-      </Link>
+      <div className="hidden lg:flex">
+        <Link href="https://wa.me/919876543210" target="_blank">
+          <Button
+            type="button"
+            title="WhatsApp Us"
+            icon="/whatsapp.svg"
+            variant="btn_white"
+          />
+        </Link>
+      </div>
 
       {/* Hamburger Icon */}
       <div className="lg:hidden z-50" onClick={toggleMenu}>
@@ -73,12 +75,14 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button
-                type="button"
-                title="Login"
-                icon="/user.svg"
-                variant="btn_dark_green"
-              />
+              <Link href="https://wa.me/919876543210" target="_blank">
+                <Button
+                  type="button"
+                  title="WhatsApp Us"
+                  icon="/whatsapp.svg"
+                  variant="btn_white"
+                />
+              </Link>
             </ul>
           </motion.div>
         )}

@@ -15,6 +15,7 @@ interface CampProps {
   title: string;
   subtitle: string;
   peopleJoined: string;
+  slug: string;
 }
 
 const CampSite = ({
@@ -22,6 +23,7 @@ const CampSite = ({
   title,
   subtitle,
   peopleJoined,
+  slug,
 }: CampProps) => {
   return (
     <div
@@ -53,7 +55,7 @@ const CampSite = ({
           </div>
           <p className="text-base font-semibold">{peopleJoined}</p>
           <button className="bg-green-600 px-6 py-2 rounded-md">
-            <Link href="/packages" className="text-white">
+            <Link href={`/packages/${slug}`} className="text-white">
               Details
             </Link>
           </button>
@@ -144,24 +146,28 @@ const Camp = () => {
             title="Dawki Camp"
             subtitle="Near the River"
             peopleJoined="50+ Joined"
+            slug="putuk-truno-camp"
           />
           <CampSite
             backgroundImage="bg-bg-img-2"
             title="Syntung Falls"
             subtitle="Somewhere in the Wilderness"
             peopleJoined="50+ Joined"
+            slug="mountain-view-camp"
           />
           <CampSite
             backgroundImage="bg-bg-img-3"
             title="Nohkalikai Falls"
             subtitle="Above the Clouds"
             peopleJoined="50+ Joined"
+            slug="hilltop-escape"
           />
           <CampSite
             backgroundImage="bg-bg-img-4"
             title="Jungle Retreat"
             subtitle="Deep in the Forest"
             peopleJoined="50+ Joined"
+            slug="jungle-retreat"
           />
         </div>
       </section>
