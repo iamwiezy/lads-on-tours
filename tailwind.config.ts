@@ -7,6 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'slide-in-left': {
+          '0%': { transform: 'translateX(-100px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        'slide-in-right': {
+          '0%': { transform: 'translateX(100px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.6s ease-out forwards',
+        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+      },
       colors: {
         green: {
           50: '#30AF5B',
@@ -29,9 +48,17 @@ module.exports = {
           50: '#FEC601',
         },
       },
+      boxShadow: {
+      'soft': '0 8px 20px rgba(0, 0, 0, 0.15)',
+    },
+    backdropBlur: {
+      xs: '2px',
+    },
       backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
+        'bg-img-1': "url('/shillong-1.jpg')",
+        'bg-img-2': "url('/shillong-2.jpg')",
+        'bg-img-3': "url('/shillong-3.jpg')",
+        'bg-img-4': "url('/shillong-4.jpg')",
         'feature-bg': "url('/feature-bg.png')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
@@ -49,5 +76,6 @@ module.exports = {
       },
     },
   },
+  
   plugins: [],
 };

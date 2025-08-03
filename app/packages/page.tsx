@@ -1,12 +1,11 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { PEOPLE_URL } from "@/constants";
 import Image from "next/image";
-import Button from "./Button";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +14,7 @@ interface CampProps {
   title: string;
   subtitle: string;
   peopleJoined: string;
+  slug: string;
 }
 
 const CampSite = ({
@@ -22,6 +22,7 @@ const CampSite = ({
   title,
   subtitle,
   peopleJoined,
+  slug,
 }: CampProps) => {
   return (
     <div
@@ -37,24 +38,11 @@ const CampSite = ({
             <p className="text-sm opacity-85">{subtitle}</p>
           </div>
         </div>
-
         <div className="flex items-center gap-5">
-          <div className="flex -space-x-4">
-            {/* {PEOPLE_URL.map((url) => (
-              <Image
-                key={url}
-                src={url}
-                alt="person"
-                width={40}
-                height={40}
-                className="rounded-full border-2 border-white"
-              />
-            ))} */}
-          </div>
           <p className="text-base font-semibold">{peopleJoined}</p>
           <button className="bg-green-600 px-6 py-2 rounded-md">
-            <Link href="/packages" className="text-white">
-              Details
+            <Link href={`/packages/${slug}`} className="text-white">
+              Book Now
             </Link>
           </button>
         </div>
@@ -63,9 +51,71 @@ const CampSite = ({
   );
 };
 
-const Camp = () => {
+const Page = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLDivElement>(null);
+
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+
+  const allPackages: CampProps[] = [
+    {
+      backgroundImage: "bg-bg-img-1",
+      title: "Dawki Camp",
+      subtitle: "Prigen, Pasuruan",
+      peopleJoined: "50+ Joined",
+      slug: "putuk-truno-camp",
+    },
+    {
+      backgroundImage: "bg-bg-img-2",
+      title: "Syntung Falls",
+      subtitle: "Somewhere in the Wilderness",
+      peopleJoined: "30+ Joined",
+      slug: "mountain-view-camp",
+    },
+    {
+      backgroundImage: "bg-bg-img-3",
+      title: "Nohkalikai Falls",
+      subtitle: "Above the Clouds",
+      peopleJoined: "20+ Joined",
+      slug: "hilltop-escape",
+    },
+    {
+      backgroundImage: "bg-bg-img-4",
+      title: "Jungle Retreat",
+      subtitle: "Deep in the Forest",
+      peopleJoined: "40+ Joined",
+      slug: "jungle-retreat",
+    },
+    {
+      backgroundImage: "bg-bg-img-2",
+      title: "Riverbank Camp",
+      subtitle: "Next to the Stream",
+      peopleJoined: "60+ Joined",
+      slug: "riverbank-camp",
+    },
+    {
+      backgroundImage: "bg-bg-img-2",
+      title: "Desert Mirage",
+      subtitle: "Hidden Oasis",
+      peopleJoined: "35+ Joined",
+      slug: "desert-mirage",
+    },
+  ];
+
+  const filteredPackages = useMemo(() => {
+    return allPackages.filter((pkg) =>
+      pkg.title.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search, allPackages]);
+
+  const paginatedPackages = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return filteredPackages.slice(start, start + itemsPerPage);
+  }, [filteredPackages, currentPage]);
+
+  const totalPages = Math.ceil(filteredPackages.length / itemsPerPage);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -108,15 +158,15 @@ const Camp = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [paginatedPackages]);
 
   return (
     <>
-      <section className="2xl:max-container relative flex flex-col py-10  lg:py-20 xl:">
-        <div className="flex justify-start mb-12 px-6 lg:px-12">
+      <section className="2xl:max-container relative flex flex-col py-10 lg:py-20">
+        {/* <div className="flex justify-start mb-12 px-6 lg:px-12">
           <div
             ref={quoteRef}
-            className="relative bg-green-600 backdrop-blur-xl rounded-3xl xl:rounded-5xl p-8 xl:p-16 text-white shadow-xl overflow-hidden w-full max-w-2xl xl:max-w-3xl">
+            className="relative bg-green-600 backdrop-blur-xl rounded-3xl p-8 xl:p-16 text-white shadow-xl overflow-hidden w-full max-w-2xl xl:max-w-3xl">
             <h2 className="text-2xl md:text-4xl 2xl:text-5xl font-light leading-tight">
               <strong className="font-bold">Feeling Lost</strong> and Not
               Knowing The Way?
@@ -135,36 +185,46 @@ const Camp = () => {
               className="absolute right-4 bottom-4 opacity-40"
             />
           </div>
+        </div> */}
+
+        <div className="px-6 mb-8">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setCurrentPage(1); // Reset page on search
+            }}
+            placeholder="Search packages..."
+            className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
         </div>
+
         <div
           ref={containerRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
-          <CampSite
-            backgroundImage="bg-bg-img-1"
-            title="Dawki Camp"
-            subtitle="Near the River"
-            peopleJoined="50+ Joined"
-          />
-          <CampSite
-            backgroundImage="bg-bg-img-2"
-            title="Syntung Falls"
-            subtitle="Somewhere in the Wilderness"
-            peopleJoined="50+ Joined"
-          />
-          <CampSite
-            backgroundImage="bg-bg-img-3"
-            title="Nohkalikai Falls"
-            subtitle="Above the Clouds"
-            peopleJoined="50+ Joined"
-          />
-          <CampSite
-            backgroundImage="bg-bg-img-4"
-            title="Jungle Retreat"
-            subtitle="Deep in the Forest"
-            peopleJoined="50+ Joined"
-          />
+          {paginatedPackages.map((pkg, index) => (
+            <CampSite key={index} {...pkg} />
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-10 flex justify-center gap-3">
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`px-4 py-2 rounded-md ${
+                currentPage === index + 1
+                  ? "bg-green-600 text-white"
+                  : "bg-gray-200"
+              }`}>
+              {index + 1}
+            </button>
+          ))}
         </div>
       </section>
+
       <div className="w-full flex justify-center">
         <Button
           type="button"
@@ -177,4 +237,4 @@ const Camp = () => {
   );
 };
 
-export default Camp;
+export default Page;
