@@ -1,10 +1,32 @@
-// app/contactPage/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay },
+  }),
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "" });
+
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const leftInView = useInView(leftRef, { once: true, margin: "-100px" });
+  const rightInView = useInView(rightRef, { once: true, margin: "-100px" });
+
+  const leftControls = useAnimation();
+  const rightControls = useAnimation();
+
+  useEffect(() => {
+    if (leftInView) leftControls.start("visible");
+    if (rightInView) rightControls.start("visible");
+  }, [leftInView, rightInView, leftControls, rightControls]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -13,14 +35,19 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Submitted:", formData);
-    // Handle actual submission here
+    // Add real submission logic
   };
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] flex flex-col items-center justify-center px-6 py-12">
       <div className="max-w-5xl w-full flex flex-col lg:flex-row justify-between">
         {/* Left Section */}
-        <div className="lg:w-1/2 space-y-8">
+        <motion.div
+          ref={leftRef}
+          initial="hidden"
+          animate={leftControls}
+          variants={fadeInUp}
+          className="lg:w-1/2 space-y-8">
           <h1 className="text-8xl leading-none font-bold tracking-tight uppercase text-green-600">
             Sub
             <br />
@@ -51,10 +78,15 @@ const Contact = () => {
               <li>Conspiracy theories</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Section */}
-        <form
+        <motion.form
+          ref={rightRef}
+          initial="hidden"
+          animate={rightControls}
+          variants={fadeInUp}
+          custom={0.3}
           onSubmit={handleSubmit}
           className="lg:w-1/2 flex flex-col gap-8 mt-12 lg:mt-0">
           <div>
@@ -90,7 +122,7 @@ const Contact = () => {
             className="text-3xl self-start mt-2 hover:scale-105 transition-transform">
             [ ↗ ]
           </button>
-        </form>
+        </motion.form>
       </div>
     </div>
   );

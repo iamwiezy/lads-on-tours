@@ -1,9 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useAnimation, useInView } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useInView,
+  easeInOut,
+  Variants,
+  TargetAndTransition,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 import Button from "./Button";
+
+const fadeLeft: Variants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: easeInOut },
+  },
+};
+
+const fadeRight: Variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: easeInOut },
+  },
+};
+
+const starVariants: {
+  hidden: TargetAndTransition;
+  visible: (i: number) => TargetAndTransition;
+} = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { delay: i * 0.1, duration: 0.3 },
+  }),
+};
 
 const Hero = () => {
   const leftRef = useRef(null);
@@ -24,39 +61,12 @@ const Hero = () => {
     starControls.start(starsInView ? "visible" : "hidden");
   }, [leftInView, rightInView, starsInView]);
 
-  const fadeLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const fadeRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const starVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: (i: number) => ({
-      opacity: 1,
-      scale: 1,
-      transition: { delay: i * 0.1, duration: 0.3 },
-    }),
-  };
-
   return (
     <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
-      {/* Background Map (static) */}
+      {/* Background Map */}
       <div className="hero-map" />
 
-      {/* Left Section */}
+      {/* Right Section (Logo Box) */}
       <motion.div
         ref={rightRef}
         variants={fadeRight}
@@ -87,7 +97,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Right Section */}
+      {/* Left Section (Text) */}
       <motion.div
         ref={leftRef}
         variants={fadeLeft}
@@ -109,6 +119,7 @@ const Hero = () => {
           brings you closer to nature, culture, and community.
         </p>
 
+        {/* Stars and Review */}
         <div className="my-11 flex flex-wrap gap-5">
           <div className="flex items-center gap-2" ref={starsRef}>
             {Array(5)
@@ -124,7 +135,6 @@ const Hero = () => {
                 </motion.div>
               ))}
           </div>
-
           <p className="bold-16 lg:bold-20 text-blue-70">
             198k
             <span className="regular-16 lg:regular-20 ml-1">
@@ -133,6 +143,7 @@ const Hero = () => {
           </p>
         </div>
 
+        {/* Buttons */}
         <div className="flex flex-col w-full gap-3 sm:flex-row">
           <Button
             type="button"
