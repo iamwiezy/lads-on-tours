@@ -75,7 +75,7 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link href="https://wa.me/919876543210" target="_blank">
+              <Link href="https://wa.me/919485431169" target="_blank">
                 <Button
                   type="button"
                   title="WhatsApp Us"

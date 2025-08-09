@@ -55,7 +55,7 @@ module.exports = {
       xs: '2px',
     },
       backgroundImage: {
-        'bg-img-1': "url('/shillong-1.jpg')",
+        'bg-img-1': "url('/packagesCaravan-10.JPEG')",
         'bg-img-2': "url('/shillong-2.jpg')",
         'bg-img-3': "url('/shillong-3.jpg')",
         'bg-img-4': "url('/shillong-4.jpg')",

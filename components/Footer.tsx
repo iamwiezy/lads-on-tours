@@ -20,7 +20,7 @@ const Footer = () => {
             <Link
               href="/contact"
               className="group inline-flex items-end gap-2 text-[48px] font-bold tracking-tight border-b border-black hover:text-gray-800 transition-all">
-              LET'S TALK
+              LET'S <span className="text-green-600">TALK</span>
               <ArrowUpRight className="w-10 h-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </div>

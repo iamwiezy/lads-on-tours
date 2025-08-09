@@ -18,7 +18,7 @@ const ProfileCard = () => {
         {/* Image */}
         <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 mt-4">
           <Image
-            src="/profile.png" // replace with actual image path
+            src="/profilepic.jpg" // replace with actual image path
             alt="Javi A. Torres"
             width={128}
             height={128}
@@ -29,7 +29,7 @@ const ProfileCard = () => {
         {/* Footer Info */}
         <div className="w-full mt-6 bg-white/5 backdrop-blur-sm rounded-2xl flex items-center justify-between px-4 py-3">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden">
+            {/* <div className="w-10 h-10 rounded-full overflow-hidden">
               <Image
                 src="/profile.png" // again, use actual image
                 alt="@javicodes"
@@ -37,15 +37,20 @@ const ProfileCard = () => {
                 height={40}
                 className="object-cover"
               />
-            </div>
+            </div> */}
             <div className="text-left">
               <p className="text-sm font-medium text-white">@banjop</p>
               <p className="text-xs text-green-400">Online</p>
             </div>
           </div>
-          <button className="bg-green-600 hover:bg-green-700 transition text-sm px-4 py-2 rounded-xl font-medium text-white">
-            Contact Me
-          </button>
+          <a
+            href="https://www.instagram.com/banjop_iawphniaw?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer">
+            <button className="bg-green-600 hover:bg-green-700 transition text-sm px-4 py-2 rounded-xl font-medium text-white">
+              Contact Me
+            </button>
+          </a>
         </div>
       </div>
     </div>

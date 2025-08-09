@@ -6,6 +6,7 @@ interface Props {
   params: { slug: string };
 }
 
+// For static site generation
 export function generateStaticParams() {
   return allPackages.map((pkg) => ({
     slug: pkg.slug,
@@ -16,10 +17,13 @@ const Page = ({ params }: Props) => {
   const pkg = allPackages.find((p) => p.slug === params.slug);
   if (!pkg) return notFound();
 
+  const filledStars = "★".repeat(Math.floor(pkg.rating));
+  const emptyStars = "☆".repeat(5 - Math.floor(pkg.rating));
+
   return (
     <div className="p-6 max-w-7xl mx-auto">
       {/* Top Section: Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Image Gallery */}
         <ImageGallery images={pkg.images} title={pkg.title} />
 
@@ -30,28 +34,28 @@ const Page = ({ params }: Props) => {
           <p className="text-sm text-gray-500">{pkg.peopleJoined}</p>
 
           <div className="text-2xl font-semibold text-green-600">
-            Rs. 8,000/-
+            Rs. {pkg.price.toLocaleString("en-IN")}/-
           </div>
-          <div className="text-sm line-through text-gray-400">Rs. 18,000/-</div>
+          <div className="text-sm line-through text-gray-400">
+            Rs. {pkg.originalPrice.toLocaleString("en-IN")}/-
+          </div>
 
           <div className="flex items-center gap-2 text-sm text-yellow-500">
-            ★★★★☆ <span className="text-gray-600">(55 reviews)</span>
+            {filledStars + emptyStars}
+            <span className="text-gray-600">({pkg.reviewsCount} reviews)</span>
           </div>
 
-          <p className="text-sm text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            commodo ligula eget dolor.
-          </p>
+          <p className="text-sm text-gray-700">{pkg.description}</p>
 
           <div className="flex items-center gap-2">
-            <a href="tel:+919876543210">
+            <a href="tel:+919485431169">
               <button className="border px-4 py-2 rounded bg-green-600 hover:bg-green-800 text-white">
                 Call to Book
               </button>
             </a>
           </div>
 
-          <p className="text-xs text-gray-500">Category: Camp</p>
+          <p className="text-xs text-gray-500">Category: {pkg.category}</p>
         </div>
       </div>
 
@@ -65,10 +69,8 @@ const Page = ({ params }: Props) => {
 
         <div>
           <h3 className="text-lg font-bold mb-2">Trip Details:</h3>
-          <p className="text-sm text-gray-700 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes...
+          <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+            {pkg.tripDetails}
           </p>
         </div>
       </div>

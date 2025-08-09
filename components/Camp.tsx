@@ -143,12 +143,12 @@ const Camp = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
           <CampSite
             backgroundImage="bg-bg-img-1"
-            title="Dawki Camp"
+            title="Caravan Package"
             subtitle="Near the River"
             peopleJoined="50+ Joined"
-            slug="putuk-truno-camp"
+            slug="caravan-package"
           />
-          <CampSite
+          {/* <CampSite
             backgroundImage="bg-bg-img-2"
             title="Syntung Falls"
             subtitle="Somewhere in the Wilderness"
@@ -168,7 +168,7 @@ const Camp = () => {
             subtitle="Deep in the Forest"
             peopleJoined="50+ Joined"
             slug="jungle-retreat"
-          />
+          /> */}
         </div>
       </section>
       <div className="w-full flex justify-center">
