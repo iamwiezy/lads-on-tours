@@ -63,9 +63,16 @@ const Page = () => {
     {
       backgroundImage: "bg-bg-img-1",
       title: "Dawki Camp",
-      subtitle: "Prigen, Pasuruan",
+      subtitle: "Dawki, Meghalaya",
       peopleJoined: "50+ Joined",
       slug: "caravan-package",
+    },
+    {
+      backgroundImage: "bg-bg-img-2",
+      title: "Umiam Lake Camp",
+      subtitle: "Umiam, Meghalaya",
+      peopleJoined: "50+ Joined",
+      slug: "umiam-lake-camp",
     },
     // {
     //   backgroundImage: "bg-bg-img-2",

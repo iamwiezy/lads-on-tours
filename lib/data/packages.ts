@@ -34,6 +34,24 @@ export const allPackages: CampProps[] = [
     tripDetails:
       "Packages Caravan 6 days 5 nights = 18500 per person for 4 upto 6 pax per trip",
   },
+  {
+    backgroundImage: "bg-bg-img-2",
+    title: "Umiam Lake Camp",
+    subtitle: "Meghalaya",
+    peopleJoined: "50+ Joined",
+    slug: "umiam-lake-camp",
+    images: ["/umiam-1.jpg", "/umiam-2.jpg", "/umiam-3.jpg" ],
+    price: 18500,
+    originalPrice: 20000,
+    rating: 4.6,
+    reviewsCount: 55,
+    description:
+      "Umiam Lake Camp 6 days 5 nights = 18500 per person for 4 upto 6 pax per trip",
+    category: "Camp",
+    tripDetails:
+      "Umiam Lake Camp 6 days 5 nights = 18500 per person for 4 upto 6 pax per trip",
+  },
+  
   // {
   //   backgroundImage: "bg-bg-img-2",
   //   title: "Syntung Falls",

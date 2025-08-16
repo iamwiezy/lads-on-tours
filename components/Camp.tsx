@@ -143,10 +143,17 @@ const Camp = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
           <CampSite
             backgroundImage="bg-bg-img-1"
-            title="Caravan Package"
-            subtitle="Near the River"
+            title="Dawki Camp"
+            subtitle="Dawki, Meghalaya"
             peopleJoined="50+ Joined"
             slug="caravan-package"
+          />
+          <CampSite
+            backgroundImage="bg-bg-img-2"
+            title="Umiam Lake Camp"
+            subtitle="Umiam, Meghalaya"
+            peopleJoined="50+ Joined"
+            slug="umiam-lake-camp"
           />
           {/* <CampSite
             backgroundImage="bg-bg-img-2"

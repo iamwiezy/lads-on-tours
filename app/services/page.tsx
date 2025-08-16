@@ -21,9 +21,18 @@ const ServicesPage = () => {
         viewport={{ once: true }}
         variants={fadeInUp}
         transition={{ duration: 0.6 }}
-        className="bg-green-500 py-10 text-center h-[30vh] m-6 rounded-lg">
-        <h1 className="text-4xl font-bold text-white">Services</h1>
-        <p className="text-sm mt-2 text-white">Home &gt; Services</p>
+        className="relative bg-gradient-to-r from-green-500 via-green-600 to-green-700 py-16 px-6 text-center h-[35vh] m-6 rounded-2xl shadow-lg overflow-hidden">
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-black/10 rounded-2xl"></div>
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full">
+          <h1 className="text-5xl font-extrabold text-white tracking-wide drop-shadow-lg">
+            Services
+          </h1>
+          <div className="w-16 h-1 bg-white/80 rounded-full mt-3 mb-4"></div>
+          <p className="text-base text-white/90">Home &gt; Services</p>
+        </div>
       </motion.div>
 
       {/* Mission */}
@@ -37,7 +46,7 @@ const ServicesPage = () => {
         <p className="text-green-500 font-semibold">Our Services</p>
         <h2 className="text-2xl md:text-3xl font-bold mt-2">
           Our Mission Is To Make Your{" "}
-          <span className="bg-green-500 px-2">Travel</span> Better
+          <span className="bg-green-500 px-2 text-white">Travel</span> Better
         </h2>
       </motion.section>
 

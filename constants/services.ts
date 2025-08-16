@@ -9,7 +9,7 @@ export const SERVICES = [
     title: "Holiday Packages",
     description: "All-inclusive domestic and international holiday plans tailored to your needs.",
     icon: "🏖️",
-    color: "bg-green-500 text-black",
+    color: "bg-green-500 text-white",
   },
   {
     title: "Travel Consultancy",
@@ -21,7 +21,7 @@ export const SERVICES = [
     title: "Flight Bookings",
     description: "Competitive airfares with flexible booking options for all destinations.",
     icon: "✈️",
-    color: "bg-green-500 text-black",
+    color: "bg-green-500 text-white",
   },
   {
     title: "Hotel Reservations",
@@ -33,6 +33,6 @@ export const SERVICES = [
     title: "Group & Corporate Trips",
     description: "Tailored packages for schools, colleges, and corporate teams.",
     icon: "👥",
-    color: "bg-green-500 text-black",
+    color: "bg-green-500 text-white",
   },
 ];
