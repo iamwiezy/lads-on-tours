@@ -45,7 +45,7 @@ export const allPackages: CampProps[] = [
   rating: 4.6,
   reviewsCount: 55,
   description:
-    "Packages Caravan 6 days 5 nights = 18500 per person for 4 upto 6 max people per trip",
+    "Packages Caravan 6 days 5 nights = 18500 per person for 4 upto 6 pax people per trip",
   category: "Camp",
   tripDetails:
     "Experience Meghalaya like never before with our Caravan Trip. Travel at your own pace through rolling hills, misty valleys, waterfalls and hidden village all from the comfort of a moving home. Whether it’s camping under the stars waking up to scenic views or exploring offbeat lo	cations our caravans let you blend adventure with relaxation for a truly unforgettable journey.",
