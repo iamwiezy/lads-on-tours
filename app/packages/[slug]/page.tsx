@@ -1,6 +1,7 @@
 import { allPackages } from "@/lib/data/packages";
 import { notFound } from "next/navigation";
 import ImageGallery from "@/components/ImageGallery";
+import PackageTabs from "@/components/PackageTab";
 
 interface Props {
   params: { slug: string };
@@ -34,7 +35,8 @@ const Page = ({ params }: Props) => {
           <p className="text-sm text-gray-500">{pkg.peopleJoined}</p>
 
           <div className="text-2xl font-semibold text-green-600">
-            Rs. {pkg.price.toLocaleString("en-IN")}/-
+            Rs. {pkg.price.toLocaleString("en-IN")}/-{" "}
+            <span className="text-black">Per Head</span>
           </div>
           <div className="text-sm line-through text-gray-400">
             Rs. {pkg.originalPrice.toLocaleString("en-IN")}/-
@@ -60,7 +62,7 @@ const Page = ({ params }: Props) => {
       </div>
 
       {/* Tabs Section */}
-      <div className="mt-12">
+      {/* <div className="mt-12">
         <div className="flex gap-6 border-b pb-2 mb-6">
           <button className="font-semibold text-black border-b-2 border-black">
             Description
@@ -73,7 +75,8 @@ const Page = ({ params }: Props) => {
             {pkg.tripDetails}
           </p>
         </div>
-      </div>
+      </div> */}
+      <PackageTabs pkg={pkg} />
     </div>
   );
 };

@@ -108,15 +108,17 @@ const Hero = () => {
           Lads on Tours
         </h1>
         <p className="regular-16 mt-6 text-gray-30 xl:max-w-[520px] text-justify">
-          Lads on Tours is a travel collective based in Meghalaya that offers
-          more than just trips — we create experiences. Whether you're exploring
-          the misty hills of Sohra, chasing waterfalls in Jaintia, or diving
-          into the vibrant culture of the Khasi and Garo people, our local
-          guides ensure you see the real Meghalaya. From full travel planning
-          and curated itineraries to offbeat trails and homestay bookings, we’ve
-          got your back. Perfect for backpackers, friend groups, solo travelers,
-          and anyone seeking an authentic Northeast adventure — Lads on Tours
-          brings you closer to nature, culture, and community.
+          Lads on Tour is a travel service based in Meghalaya dedicated to
+          creating unique and memorable journeys. We specialize in curated
+          cultural tours that highlight the rich traditions of the Khasi,
+          Jaintia and Garo communities as well as outdoor experiences such as
+          camping in scenic landscapes and caravan travel for those who enjoy
+          exploring at their own pace. For travellers looking to go beyond the
+          ordinary our offbeat location tours uncover hidden waterfalls, serene
+          villages and untouched natural beauty that define the spirit of
+          Meghalaya. With a focus on authenticity, comfort and adventure, Lads
+          on Tour ensures every trip is thoughtfully designed to give you more
+          than just a holiday but an experience to remember.
         </p>
 
         {/* Stars and Review */}

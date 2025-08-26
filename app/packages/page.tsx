@@ -62,8 +62,8 @@ const Page = () => {
   const allPackages: CampProps[] = [
     {
       backgroundImage: "bg-bg-img-1",
-      title: "Dawki Camp",
-      subtitle: "Dawki, Meghalaya",
+      title: "Caravan Package",
+      subtitle: "Travel in comfort",
       peopleJoined: "50+ Joined",
       slug: "caravan-package",
     },

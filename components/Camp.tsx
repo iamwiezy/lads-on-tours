@@ -143,8 +143,8 @@ const Camp = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
           <CampSite
             backgroundImage="bg-bg-img-1"
-            title="Dawki Camp"
-            subtitle="Dawki, Meghalaya"
+            title="Caravan Camp"
+            subtitle="Travel in comfort"
             peopleJoined="50+ Joined"
             slug="caravan-package"
           />
