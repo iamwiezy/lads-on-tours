@@ -45,21 +45,36 @@ export default function PackageTabs({ pkg }: { pkg: CampProps }) {
         )}
 
         {activeTab === "itinerary" && (
-          <div className="relative border-l-2 border-green-200 pl-6 space-y-8">
-            {pkg.itinerary.map((day, i) => (
-              <div key={i} className="relative">
-                <p className="font-semibold text-green-700">{day.date}</p>
-                <p className="text-gray-500 mb-2">{day.distance}</p>
-                <ul className="list-disc list-inside text-gray-700 space-y-1">
-                  {day.location
-                    .split("•")
-                    .map(
-                      (point, idx) =>
-                        point.trim() && <li key={idx}>{point.trim()}</li>
-                    )}
-                </ul>
-              </div>
-            ))}
+          <div className="backdrop-blur-md bg-white/60  p-6 rounded-2xl shadow-lg border border-white/20">
+            <h3 className="text-xl font-semibold mb-5 text-green-600 tracking-wide uppercase">
+              Itinerary
+            </h3>
+            <div className="overflow-hidden rounded-xl border border-white/10">
+              <table className="w-full text-sm md:text-base text-gray-800 dark:text-gray-200">
+                <thead>
+                  <tr className="bg-gradient-to-r from-green-900/60 to-green-900/40 text-left">
+                    <th className="p-4 font-semibold tracking-wide uppercase text-xs md:text-sm">
+                      Date
+                    </th>
+                    <th className="p-4 font-semibold tracking-wide uppercase text-xs md:text-sm">
+                      Location
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pkg.itinerary.map((day, i) => (
+                    <tr
+                      key={i}
+                      className={`transition duration-300 ${
+                        i % 2 === 0 ? "bg-white text-black" : "bg-green-900 "
+                      }  `}>
+                      <td className="p-4 font-medium">{day.date}</td>
+                      <td className="p-4">{day.location}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 

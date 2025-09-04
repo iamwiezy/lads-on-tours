@@ -1,7 +1,6 @@
 // lib/data/packages.ts
 export interface ItineraryDay {
   date: string;      // e.g. "Day 1"
-  distance: string;  // e.g. "120 km"
   location: string;  // e.g. "Shillong to Cherrapunji"
 }
 
@@ -45,20 +44,21 @@ export const allPackages: CampProps[] = [
   rating: 4.6,
   reviewsCount: 55,
   description:
-    "Packages Caravan 6 days 5 nights = 18500 per person for 4 upto 6 pax people per trip",
+    "Packages Caravan 6 days 5 nights, र 18,500/- per person for 4 upto 6 pax people per trip",
   category: "Camp",
   tripDetails:
     "Experience Meghalaya like never before with our Caravan Trip. Travel at your own pace through rolling hills, misty valleys, waterfalls and hidden village all from the comfort of a moving home. Whether it’s camping under the stars waking up to scenic views or exploring offbeat lo	cations our caravans let you blend adventure with relaxation for a truly unforgettable journey.",
 
   // 🆕 Added fields
   itinerary: [
-  { date: "Day 1", distance: "2hr 15mins (68.2km) | 1hr 16min (41.5km)", location: "•	Travel from Umiam to West Khasi Hills District •	Explore The Iconic Boulder “U Kyllang Rock” •	Head Towards Mawphanlur •	Explore the Valleys of Mawphanlur •	Overnight Stay" },
-  { date: "Day 2", distance: "1hr 52mins (64km)", location: "•	Travel from Mawphanlur to Markham Village •	Explore the Green Valley, Markham •	Journey to Mawkyrwat •	Visit the Monoliths •	Visit Mawranglang View point •	Overnight " },
-  { date: "Day 3", distance: "1hr 56mins (54.8)", location: "•	Hike to Iew Luri Lura•	Explore Umdikain Waterfall •	Discover the Split Rock •	Evening walk through the village •	Overnight Stay " },
-  { date: "Day 4", distance: "3hr 13mins (98.2km)", location: "•	River canyoning activity followed by kayaking •	Travel to Cherrapunji •	Overnight Stay  " },
-  { date: "Day 5", distance: "3hr 4mins (89.4km)", location: "•	Visit Janailar & Lyngksiar Waterfalls•	Visit Nohkalikai Waterfall •	Explore Arwah Cave •	Overnight Stay " },
-  { date: "Day 6", distance: "2hr 45mins (75.4km)", location: "•	Descend 3,000 steps•	Explore the Double Decker Living Root Bridge •	Ascend 3,000 steps back •	Return to Umiam •	Overnight stay in Umiam" },
+  { date: "Day 1",  location: "Shillong → Mawphanlur" },
+  { date: "Day 2",  location: "Markham Mawkyrwat" },
+  { date: "Day 3", location: "Mawkyrwat → Mawsynram" },
+  { date: "Day 4",  location: "Mawsynram (Activities)" },
+  { date: "Day 5",  location: "Mawsynram (Activities)" },
+  { date: "Day 6", location: "Shillong" },
 ],
+
   inclusions: [
     "Comfortable caravan accommodation for the duration of the trip",
     "Transportation between destinations in the caravan",
@@ -90,12 +90,12 @@ export const allPackages: CampProps[] = [
       "Umiam Lake Camp 6 days 5 nights = 18500 per person for 4 upto 6 pax per trip",
     // 🆕 Added fields
   itinerary: [
-  { date: "Day 1", distance: "120 km", location: "Shillong local sightseeing" },
-  { date: "Day 2", distance: "65 km", location: "Shillong → Cherrapunji" },
-  { date: "Day 3", distance: "85 km", location: "Cherrapunji → Mawlynnong" },
-  { date: "Day 4", distance: "90 km", location: "Mawlynnong → Dawki" },
-  { date: "Day 5", distance: "110 km", location: "Dawki → Jowai" },
-  { date: "Day 6", distance: "150 km", location: "Jowai → Shillong (Departure)" },
+  { date: "Day 1", location: "Shillong local sightseeing" },
+  { date: "Day 2", location: "Shillong → Cherrapunji" },
+  { date: "Day 3", location: "Cherrapunji → Mawlynnong" },
+  { date: "Day 4", location: "Mawlynnong → Dawki" },
+  { date: "Day 5",  location: "Dawki → Jowai" },
+  { date: "Day 6", location: "Jowai → Shillong (Departure)" },
 ],
   inclusions: [
     "Accommodation in Caravan",
