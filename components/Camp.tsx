@@ -150,7 +150,7 @@ const Camp = () => {
           />
           <CampSite
             backgroundImage="bg-bg-img-2"
-            title="Umiam Lake Camp"
+            title="Umiam Camping Tour"
             subtitle="Umiam, Meghalaya"
             peopleJoined="50+ Joined"
             slug="umiam-lake-camp"

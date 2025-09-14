@@ -3,6 +3,7 @@ import Features from "@/components/Features";
 import GetApp from "@/components/GetApp";
 import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
+import TeamSection from "@/components/TeamSection";
 import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Guide />
       <Features />
       <GetApp />
+      <TeamSection />
     </>
   );
 }

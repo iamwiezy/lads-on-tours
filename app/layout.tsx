@@ -5,21 +5,21 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Lads On Tours | Adventure Travel Experts",
+  title: "Lads On Tours Shillong | Adventure Travel Experts",
   description:
     "Discover unforgettable adventures with Lads On Tours — your trusted travel agency for trekking, camping, road trips, and more.",
   openGraph: {
-    title: "Lads On Tours | Adventure Travel Experts",
+    title: "Lads On Tours Shillong | Adventure Travel Experts",
     description:
       "Plan your next big adventure with Lads On Tours. Explore our curated travel packages for thrill-seekers and nature lovers.",
-    url: "https://www.ladsontours.com", // change to your real domain
+    url: "https://www.ladsontourshillong.com", // change to your real domain
     siteName: "Lads On Tours",
     images: [
       {
         url: "/og-image.png", // Optional: add an OG image
         width: 1200,
         height: 630,
-        alt: "Lads On Tours - Adventure Travel Experts",
+        alt: "Lads On Tours Shillong - Adventure Travel Experts",
       },
     ],
     locale: "en_US",
