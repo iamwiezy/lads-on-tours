@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 // Best practice: Set a base URL for all relative paths in metadata
 export const metadata: Metadata = {
@@ -133,6 +134,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Analytics />
         <Navbar />
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
