@@ -74,6 +74,13 @@ const Page = () => {
       peopleJoined: "50+ Joined",
       slug: "umiam-lake-camp",
     },
+    {
+      backgroundImage: "bg-bg-img-3",
+      title: "Living Root Bridge Tour",
+      subtitle: "Nongriat, Meghalaya",
+      peopleJoined: "50+ Joined",
+      slug: "living-root-bridge-tour",
+    },
     // {
     //   backgroundImage: "bg-bg-img-2",
     //   title: "Syntung Falls",

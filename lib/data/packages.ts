@@ -112,4 +112,39 @@ export const allPackages: CampProps[] = [
     "Anything not mentioned in inclusions",
   ],
     },
+  {
+    backgroundImage: "bg-bg-img-3",
+    title: "Living Root Bridge Tour",
+    subtitle: "Meghalaya",
+    peopleJoined: "50+ Joined",
+    slug: "living-root-bridge-tour",
+    images: ["/livingRootBridge.png","/waterfall_1.png", "/waterfall_2.png", "/waterfall_3.png" ],
+    price: 18500,
+    originalPrice: 20000,
+    rating: 4.6,
+    reviewsCount: 55,
+    description: 'In Meghalaya, the Living Root Bridges are centuries-old wonders grown from the roots of rubber trees by the Khasi and Jaintia communities. These natural pathways, from the famous Double Decker in Nongriat to hidden village bridges, showcase a rare blend of tradition and nature. A must-see for adventurers and nature lovers alike.',
+    category: "Camp",
+    tripDetails:
+            "Enter a world where nature and tradition intertwine in extraordinary harmony. Unique to Meghalaya the Living Root Bridges are stunning examples of bioengineering crafted by the Khasi and Jaintia communities who skilfully guided the roots of rubber trees to grow into natural, living pathways across rivers and streams. Your journey will take you through lush green forests and sparkling streams leading to these centuries-old wonders many still serving as daily crossings for local villagers. From the iconic Double Decker Bridge in Nongriat to hidden gems nestled in remote villages each bridge offers a rare glimpse into Meghalaya’s cultural heritage and natural beauty.An experience designed for adventurers, explorers and nature lovers this is your chance to witness one of the world’s most remarkable and sustainable creations.",
+
+    // 🆕 Added fields
+  itinerary: [
+  // { date: "Day 1", location: "Shillong local sightseeing" },
+],
+  inclusions: [
+    "Accommodation in Caravan",
+    "Meals (Breakfast & Dinner)",
+    "Driver & Fuel charges",
+    "Basic medical kit",
+    "Campfire experience",
+  ],
+  exclusions: [
+    "Airfare/Train tickets",
+    "Lunch & personal expenses",
+    "Adventure activity fees",
+    "Travel insurance",
+    "Anything not mentioned in inclusions",
+  ],
+    },
 ];

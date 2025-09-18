@@ -155,6 +155,13 @@ const Camp = () => {
             peopleJoined="50+ Joined"
             slug="umiam-lake-camp"
           />
+          <CampSite
+            backgroundImage="bg-bg-img-3"
+            title="Living Root Bridge Tour"
+            subtitle="Nongriat, Meghalaya"
+            peopleJoined="50+ Joined"
+            slug="living-root-bridge-tour"
+          />
           {/* <CampSite
             backgroundImage="bg-bg-img-2"
             title="Syntung Falls"
